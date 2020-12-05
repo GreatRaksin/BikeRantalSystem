@@ -125,3 +125,4 @@ class Customer:
             return -1
         else:
             self.bikes = n_b
+        return self.bikes
