@@ -16,4 +16,15 @@ class BikeRental:
 
         # отклонить отрицательный ввод
         if n <= 0:
-            print('')
+            print('Количество должно быть больше 0!')
+            return None
+        elif n > self.stock:
+            print(f'У нас только {self.stock} велопид(ов) доступно для аренды')
+            return None
+        else:
+            now = datetime.now()
+            print(f'Вы арендовали {n} велосипед(ов) на {now.hour} час(ов).')
+            print('С вас будут списывать по $5 за каждый час аренды.')
+            print('Наслаждайтесь!')
+            self.stock -= n
+            return now
