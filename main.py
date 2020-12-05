@@ -126,3 +126,10 @@ class Customer:
         else:
             self.bikes = n_b
         return self.bikes
+
+    def returnBike(self):
+        """Позоляет пользователю вернуть велиписед"""
+        if self.rentalBasis and self.rentalTime and self.bikes:
+            return self.rentalTime, self.rentalBasis, self.bikes
+        else:
+            return 0, 0, 0
