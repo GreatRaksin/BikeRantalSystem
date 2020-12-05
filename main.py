@@ -92,4 +92,12 @@ class BikeRental:
                 bill = round(rentalPeriod.days / 7) * 60 * numOfBikes
 
             if 3 <= numOfBikes <= 5:
-                print('Вы получаете семейную скидку ')
+                print('Вы получаете семейную скидку - 30%')
+                bill *= 0.7
+
+            print('Спасибо, что пользуетесь нашим сервисом!')
+            print(f'Стоимость аренды ${bill}.')
+            return bill
+        else:
+            print('Вы не арендовали велосипеды!')
+            return None
