@@ -23,8 +23,44 @@ class BikeRental:
             return None
         else:
             now = datetime.now()
-            print(f'Вы арендовали {n} велосипед(ов) на {now.hour} час(ов).')
-            print('С вас будут списывать по $5 за каждый час аренды.')
-            print('Наслаждайтесь!')
+            print(f'''Вы арендовали {n} велосипед(ов) на {now.hour} час(ов).
+            С вас будут списывать по $5 за каждый час аренды.
+            Наслаждайтесь!''')
+            self.stock -= n
+            return now
+
+    def rentBikeOnDay(self, n):
+        """Сдает в аренду велиписед на день"""
+
+        # отклонить отрицательный ввод
+        if n <= 0:
+            print('Количество должно быть больше 0!')
+            return None
+        elif n > self.stock:
+            print(f'У нас только {self.stock} велопид(ов) доступно для аренды')
+            return None
+        else:
+            now = datetime.now()
+            print(f'''Вы арендовали {n} велосипед(ов) на {now.day} дня(ей).
+            С вас будут списывать по $20 за каждый день аренды.
+            Наслаждайтесь!''')
+            self.stock -= n
+            return now
+
+    def rentBikeOnWeek(self, n):
+        """Сдает в аренду велиписед на день"""
+
+        # отклонить отрицательный ввод
+        if n <= 0:
+            print('Количество должно быть больше 0!')
+            return None
+        elif n > self.stock:
+            print(f'У нас только {self.stock} велопид(ов) доступно для аренды')
+            return None
+        else:
+            now = datetime.now()
+            print(f'''Вы арендовали {n} велосипед(ов) на {now.hout} недель.
+            С вас будут списывать по $20 за каждый день аренды.
+            Наслаждайтесь!''')
             self.stock -= n
             return now
