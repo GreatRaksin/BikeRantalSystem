@@ -80,3 +80,16 @@ class BikeRental:
             self.stock += numOfBikes
             now = datetime.now()
             rentalPeriod = now - rentalTime
+
+            if rentalBasis == 1:
+                # часовая аренда
+                bill = round(rentalPeriod.seconds / 3600) * 5 * numOfBikes
+            elif rentalBasis == 2:
+                # дневная аренда
+                bill = round(rentalPeriod.days) * 20 * numOfBikes
+            elif rentalBasis == 3:
+                # недельная аренда
+                bill = round(rentalPeriod.days / 7) * 60 * numOfBikes
+
+            if 3 <= numOfBikes <= 5:
+                print('Вы получаете семейную скидку ')
