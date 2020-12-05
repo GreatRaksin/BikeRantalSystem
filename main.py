@@ -41,7 +41,7 @@ class BikeRental:
             return None
         else:
             now = datetime.now()
-            print(f'''Вы арендовали {n} велосипед(ов) на {now.day} дня(ей).
+            print(f'''Вы арендовали {n} велосипед(ов) на {now.hour} дня(ей).
             С вас будут списывать по $20 за каждый день аренды.
             Наслаждайтесь!''')
             self.stock -= n
@@ -59,7 +59,7 @@ class BikeRental:
             return None
         else:
             now = datetime.now()
-            print(f'''Вы арендовали {n} велосипед(ов) на {now.hour * 168} недель.
+            print(f'''Вы арендовали {n} велосипед(ов) на {now.hour} недель.
             С вас будут списывать по $60 за каждую неделю аренды.
             Наслаждайтесь!''')
             self.stock -= n
@@ -78,3 +78,5 @@ class BikeRental:
 
         if rentalTime and rentalBasis and numOfBikes:
             self.stock += numOfBikes
+            now = datetime.now()
+            rentalPeriod = now - rentalTime
