@@ -111,3 +111,6 @@ class Customer:
         self.rentalBasis = 0
         self.rentalTime = 0
         self.bill = 0
+
+    def requestBike(self, n_b):
+        """Получает количество велосипедов для аренды"""
