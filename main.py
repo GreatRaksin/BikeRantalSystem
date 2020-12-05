@@ -114,3 +114,14 @@ class Customer:
 
     def requestBike(self, n_b):
         """Получает количество велосипедов для аренды"""
+        try:
+            n_b = int(n_b)
+        except ValueError:
+            print('Неправильное число!')
+            return -1
+
+        if n_b < 1:
+            print('Неправильный ввод! Количество велосипедов должно быть 1 и более.')
+            return -1
+        else:
+            self.bikes = n_b
