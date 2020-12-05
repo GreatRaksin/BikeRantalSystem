@@ -73,3 +73,8 @@ class BikeRental:
         :param показывает, сколько велоиспедов вернули, срок аренды
         :return bill
         """
+        rentalTime, rentalBasis, numOfBikes = request
+        bill = 0
+
+        if rentalTime and rentalBasis and numOfBikes:
+            self.stock += numOfBikes
