@@ -101,3 +101,13 @@ class BikeRental:
         else:
             print('Вы не арендовали велосипеды!')
             return None
+
+
+class Customer:
+    """Класс для покупателя/арендатора"""
+
+    def __init__(self):
+        self.bikes = 0
+        self.rentalBasis = 0
+        self.rentalTime = 0
+        self.bill = 0
