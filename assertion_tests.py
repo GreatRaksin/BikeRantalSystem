@@ -1,11 +1,17 @@
+import unittest
+
+
 def circle(r):
     pi = 3.14
     res = pi * r * 2
     return res
 
 
+class TestSum(unittest.TestCase):
+
+
 def test_circle(result):
-    assert circle(5) == result, 'should be 78.5'
+    assert circle(5) == result, ''
 
 
 def test_sum():
